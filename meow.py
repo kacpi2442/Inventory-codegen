@@ -4,9 +4,9 @@ from datetime import datetime
 import random
 import string
 
-height = 128
-margin = 18
-thickness = 2
+height = 60
+margin = 16
+thickness = 1
 
 # generate random characters
 seed = ''.join(random.choice(string.ascii_uppercase) for _ in range(3))
