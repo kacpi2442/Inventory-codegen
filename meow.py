@@ -8,9 +8,10 @@ import sys
 height = 60
 margin = 16
 thickness = 1
-cable_margin = 48
+cable_margin = 144
 
-# get arguments
+# get argumentsINV240932002BHI
+
 cable = int(sys.argv[1])
 
 # generate random characters
@@ -37,4 +38,8 @@ if cable:
     text_width = font.getmask(wide_text).getbbox()[2]
     text_height = font.getmask(wide_text).getbbox()[3]
     img.paste(wide_caption, (int(cable_margin + code.width + ((code.width/2) - (text_width/2))), int((height/2) - (text_height/1.5))))
+    # separator
+    draw = ImageDraw.Draw(img)
+    draw.line((code.width, 0, code.width, height), fill="black", width=1)
+    draw.line((code.width + cable_margin, 0, code.width + cable_margin, height), fill="black", width=1)
 img.save("barcode.png")
